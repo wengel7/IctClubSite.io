@@ -4,6 +4,7 @@ silderElement = document.getElementById('slider');
 totalSlides = silderElement.childElementCount;
 console.log(totalSlides);
 
+setInterval(forever, 3000);
 function next(){
     if(totalSlides > currentSlideID){
         currentSlideID++;
@@ -35,5 +36,17 @@ function showSlider(){
         else{
             element.classList.add('hidden');
         }
+    }
+}
+
+function forever(){
+   currentSlideID+=1;     
+        if(totalSlides > currentSlideID){
+            next();
+        index += 1;
+    }
+    else{
+        next();
+        index = 1;
     }
 }
